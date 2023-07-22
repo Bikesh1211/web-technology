@@ -84,14 +84,16 @@
         while ($row = $result->fetch_assoc()) {
             $name = $row["name"];
             $author = $row["author"];
-            $image = $row["image"];
+            $image = $row["image"] ;
             $price = $row["price"];
             $book_id = $row["id"]; 
-
+            if (empty($image)) {
+                // $image ='http://localhost/bookstore/images/book.png'
+            }
             // Generate the card HTML
             echo '<div class="card">';
             echo '<a href="productDetails.php?id=' . $book_id . '">';
-            echo '<img src="' . $image . '" alt="">';
+            echo '<img src="' . $image . '" alt="Book Cover">';
             echo '<h3>' . $name . ' ' . $author . '</h3>';
             echo '<br/>';
             echo '<h3>Price: $' . $price . '</h3>';

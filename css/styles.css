@@ -99,7 +99,6 @@ nav ul li {
   border: none;
   padding: 10px;
   cursor: pointer;
-  /* border-radius: 5px; */
   background-color: orange;
   width: 100%;
   margin-top: 10px;
@@ -152,4 +151,37 @@ footer {
 }
 #login-link:hover .login-container {
   display: none;
+}
+
+/* styles.css */
+
+/* Styling for the success page */
+.success-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.success-page h1 {
+  font-size: 28px;
+  color: #006400; /* Green color for success message */
+  margin-bottom: 10px;
+}
+
+.success-page p {
+  font-size: 18px;
+}
+
+/* Styling for the "Back to Home" button */
+.back-home-btn {
+  display: inline-block;
+  background-color: #007bff; /* Blue color for the button */
+  color: #fff; /* Text color for the button */
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.back-home-btn:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
 }

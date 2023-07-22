@@ -9,7 +9,6 @@ if (isset($_GET['id'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Book data found, retrieve the details
         $row = $result->fetch_assoc();
         $author = $row['author'];
         $name = $row['name'];
@@ -17,14 +16,12 @@ if (isset($_GET['id'])) {
         $description = $row['description'];
         $image = $row['image'];
     } else {
-        // Handle the case when book data is not found
         echo "Book not found.";
         exit(); // Stop further execution
     }
 } else {
-    // Handle the case when no book id is provided
     echo "Invalid book id.";
-    exit(); // Stop further execution
+    exit(); 
 }
 
 $conn->close();
@@ -96,9 +93,8 @@ $conn->close();
                     <h1><?php echo $author; ?></h1>
                     <h3><?php echo $name; ?></h3>
                     <h2>Rs. <?php echo $price; ?></h2>
-                    <!-- Add to Cart and Buy Now buttons here -->
+                    <h2><?php echo $description; ?></h2>
                     <div class="button-container">
-
                         <button>Add To Cart</button>
                         <button id="buy-button">Buy it Now</button>
                     </div>

@@ -9,15 +9,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $image = $_POST["image"];
     $price = $_POST["price"];
     $qty = $_POST["qty"];
-
-    // Create the SQL query to insert the book data
     $sql = "INSERT INTO books (name, author, image, price, qty) VALUES ('$name', '$author', '$image', $price, $qty)";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Book inserted successfully!";
+        header("Location: success.php");
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+    
 }
 
 $conn->close();
