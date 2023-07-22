@@ -1,3 +1,37 @@
+<?php
+require_once "./db.php";
+
+if (isset($_GET['id'])) {
+    $book_id = $_GET['id'];
+
+    // Fetch the book data from the database
+    $sql = "SELECT * FROM books WHERE id = $book_id";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // Book data found, retrieve the details
+        $row = $result->fetch_assoc();
+        $author = $row['author'];
+        $name = $row['name'];
+        $price = $row['price'];
+        $description = $row['description'];
+        $image = $row['image'];
+    } else {
+        // Handle the case when book data is not found
+        echo "Book not found.";
+        exit(); // Stop further execution
+    }
+} else {
+    // Handle the case when no book id is provided
+    echo "Invalid book id.";
+    exit(); // Stop further execution
+}
+
+$conn->close();
+?>
+
+<!-- HTML for displaying book details -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -5,11 +39,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/productDetails.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Product Details</title>
+    <title><?php echo $title; ?></title>
 </head>
 <body>
-   <!-- navbar -->
-   <nav>
+      <!-- navbar -->
+      <nav>
             <div class="container">
 
                 <ul>
@@ -33,52 +67,44 @@
                         <li>
                             Contact
                         </li>
-                        <li>
-                            Login
+                        <li id='login-link' >
+                            <a href="users.html">
+                                Account
+                            </a>
                         </li>
-
-
-
-
-    
+                        <li  >
+                            <a href="addBooks.html">
+                                AddBooks
+                            </a>
+                        </li>
                     </div>
                 </ul>
             </div>
 
         </nav>
         <!-- navbar -->
-        <!-- best selling books -->
-        <div class="container">
-            <div class="product-details">
-                <div class="product-details-inner">
-                    <div >
-                        <img src="https://media.thuprai.com/front_covers/harry-potter_front.jpg" alt="">
-                    </div>
-                    <div class='books-details'>
-                        <h1> J. K. Rowling</h1>
-                        <h3>Harry Potter and the Philosopher's Stone</h3>
-                        <h2>Rs.9999</h2>
-                            <p>
-                            Harry Potter and the Philosopher's Stone is a fantasy novel written by British author J. K. Rowling. The first novel in the Harry Potter series and Rowling's debut novel, it follows Harry Potter, a young wizard who discovers his magical heritage on his eleventh birthday, when he receives a letter of acceptance to Hogwarts School of Witchcraft and Wizardry
-                            </p>
-                        <div class="quantity">
-                            <h4>Quantity</h4>
-                            <div class="quantity-inner">
-                                <button>-</button>
-                                <input type="number" value='1'>
-                                <button>+</button>
-                            </div>
-                        </div>
-                        <div class="button-container">
-                            <button>Add To Cart</button>
-                            <button id="buy-button">Buy it Now</button>
-                        </div>
-                    </div>
-                  
+    <!-- Place your navbar code here -->
+
+    <!-- Book details content -->
+    <div class="container">
+        <div class="product-details">
+            <div class="product-details-inner">
                 <div>
+                    <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
+                </div>
+                <div class='books-details'>
+                    <h1><?php echo $author; ?></h1>
+                    <h3><?php echo $name; ?></h3>
+                    <h2>Rs. <?php echo $price; ?></h2>
+                    <!-- Add to Cart and Buy Now buttons here -->
+                    <div class="button-container">
+
+                        <button>Add To Cart</button>
+                        <button id="buy-button">Buy it Now</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- best selling books -->
-
+    </div>
 </body>
 </html>

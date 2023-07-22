@@ -94,7 +94,8 @@ nav ul li {
 .card h3 {
   text-align: center;
 }
-.card button {
+.card,
+.button-container button {
   border: none;
   padding: 10px;
   cursor: pointer;

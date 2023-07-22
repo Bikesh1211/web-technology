@@ -39,7 +39,7 @@
                         </li>
                         <li id='login-link' >
                             <a href="users.html">
-                                register
+                                Account
                             </a>
                         </li>
                         <li  >
@@ -68,23 +68,51 @@
 
             <h2 class='heading'>Best Selling Books</h2>
             <div class="best-selling">
-                <?php 
-        $arr 
-
-?>
 <!-- card -->
-                <div class="card">
-                    <a href="productDetails.php">
-                        <img src="https://media.thuprai.com/front_covers/harry-potter_front.jpg" alt="">
-                        <h3>harry potter and the philosopher's stone j. k. rowling</h3>
-                        <br/>
-                        <h3>Price: $300</h3>
-                    </a>
-                        <div class="button-contaienr">
-                            <button>Add To Cart</button>
-                            <button id='buy-button'>Buy it Now</button>
-                        </div>
-                </div>
+
+                <?php
+    // Include the database connection file
+    require_once "db.php";
+
+    // Fetch book data from the 'books' table
+    $sql = "SELECT * FROM books";
+    $result = $conn->query($sql);
+
+    // Check if there are any books in the database
+    if ($result->num_rows > 0) {
+        // Loop through each book and display the cards
+        while ($row = $result->fetch_assoc()) {
+            $name = $row["name"];
+            $author = $row["author"];
+            $image = $row["image"];
+            $price = $row["price"];
+            $book_id = $row["id"]; 
+
+            // Generate the card HTML
+            echo '<div class="card">';
+            echo '<a href="productDetails.php?id=' . $book_id . '">';
+            echo '<img src="' . $image . '" alt="">';
+            echo '<h3>' . $name . ' ' . $author . '</h3>';
+            echo '<br/>';
+            echo '<h3>Price: $' . $price . '</h3>';
+            echo '</a>';
+            echo '<div class="button-container">';
+            echo '<button>Add To Cart</button>';
+            echo '<button id="buy-button">Buy it Now</button>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        // If there are no books in the database
+        echo "No books found in the catalog.";
+    }
+
+    // Close the database connection
+    $conn->close();
+    ?>
+                
+                
+                
          <!-- card -->
               
             </div>
