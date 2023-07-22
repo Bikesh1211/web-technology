@@ -1,9 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
+    <link rel="stylesheet" href="css/form.css" />
   </head>
-  <body></body>
+  <body>
+    <center>
+      <h2>User Registration</h2>
+    </center>
+    <div class="form-item">
+    <form action="insert_user.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required /><br />
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required /><br />
+        <div>
+          <input type="submit" value="Login" />
+        <p>
+        
+          <a href="users.html" class="go-back-link" >  Click Here To Login</a>
+
+        </p>
+      </div>
+    </div>
+
+    </form>
+  </body>
 </html>

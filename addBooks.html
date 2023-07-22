@@ -1,79 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Book Insertion Form</title>
-    <style>
-      h2 {
-        margin-bottom: 20px;
-        color: #333;
-      }
+    <title>Add Books</title>
+    <link rel="stylesheet" href="css/form.css" />
 
-      form {
-        width: 400px;
-        border: 1px solid #ccc;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      label {
-        display: block;
-        margin-bottom: 10px;
-        color: #333;
-      }
-
-      input[type="text"],
-      input[type="number"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-      }
-
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        border-radius: 3px;
-        transition: background-color 0.3s ease;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-
-      input[type="submit"]:focus {
-        outline: none;
-      }
-
-      input[type="submit"]:active {
-        background-color: #3d8f3d;
-      }
-
-      /* Styling for the "Go Back to Home Page" link */
-      .go-back-link {
-        display: block;
-        text-align: center;
-        margin-top: 20px;
-        color: #007bff;
-        text-decoration: none;
-      }
-
-      .go-back-link:hover {
-        text-decoration: underline;
-      }
-      .form-item {
-        display: flex;
-        justify-content: center;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
-    <h2>Book Insertion Form</h2>
+    <center>
+      <h2>Book Insertion Form</h2>
+    </center>
 
     <div class="form-item">
       <form action="addBooks.php" method="post">
@@ -94,8 +30,9 @@
 
         <label for="qty">Quantity:</label>
         <input type="number" name="qty" required />
-
-        <input type="submit" value="Insert Book" />
+        <div>
+          <input type="submit" value="Insert Book" />
+        </div>
       </form>
     </div>
 

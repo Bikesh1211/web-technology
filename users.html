@@ -2,70 +2,31 @@
 <html>
   <head>
     <title>User Login</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0;
-      }
-
-      h2 {
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      form {
-        max-width: 400px;
-        margin: 20px auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-
-      label {
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      input[type="text"],
-      input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-      }
-
-      input[type="submit"] {
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        cursor: pointer;
-        border-radius: 3px;
-      }
-
-      input[type="submit"]:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <link rel="stylesheet" href="css/form.css" />
   </head>
   <body>
-    <h2>User Login</h2>
+    <center>
+
+      <h2>User Login</h2>
+    </center>
+    <div class="form-item">
     <form action="insert_user.php" method="post">
-      <label for="name">Name:</label>
-      <input type="text" name="name" required /><br />
+        <label for="name">Name:</label>
+        <input type="text" name="name" required /><br />
 
-      <label for="password">Password:</label>
-      <input type="password" name="password" required /><br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" required /><br />
+        <div>
+          <input type="submit" value="Login" />
+        <p>
+        
+          <a href="register.html" class="go-back-link" >  Click Here To Register</a>
+          <a href="index.php" class="go-back-link" >  Go Back To Home</a>
 
-      <input type="submit" value="Login" />
-      <p>
-        Click Here To
-        <a href="register.html">register</a>
-      </p>
+        </p>
+      </div>
+    </div>
+
     </form>
   </body>
 </html>

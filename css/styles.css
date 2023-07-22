@@ -3,12 +3,24 @@
   padding: 0;
 }
 nav {
+  /* background-color: #4caf50; */
   background-color: rgb(255, 236, 202);
   position: fixed;
   width: 100%;
 }
+nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+  transition: 0.2s ease-in-out;
+}
 a {
   text-decoration: none;
+}
+nav a:hover {
+  background-color: #3d8f3d;
+  color: white;
+  border-radius: 10px;
 }
 nav ul {
   display: flex;
@@ -38,7 +50,7 @@ nav ul li {
 .search-container button {
   height: 30px;
   border: none;
-  background-color: rgb(31, 24, 60);
+  background-color: #3d8f3d;
   cursor: pointer;
   color: white;
   padding: 0 10px 0 10px;
@@ -62,7 +74,10 @@ nav ul li {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 10px;
-  /* padding: 5px; */
+  padding: 5px;
+  transition: 0.5s ease-in-out;
+}
+.card:hover {
 }
 .card h3 {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -78,7 +93,7 @@ nav ul li {
   font-size: 3rem;
 }
 .card h4 {
-  color: orange;
+  /* color: orange; */
 }
 .best-selling {
   display: grid;
@@ -95,12 +110,11 @@ nav ul li {
 .card h3 {
   text-align: center;
 }
-.card,
 .button-container button {
   border: none;
   padding: 10px;
   cursor: pointer;
-  background-color: orange;
+  /* background-color: orange; */
   width: 100%;
   margin-top: 10px;
 }
@@ -176,7 +190,7 @@ footer {
 .back-home-btn {
   display: inline-block;
   background-color: #007bff; /* Blue color for the button */
-  color: #fff; /* Text color for the button */
+  color: #fff;
   padding: 10px 20px;
   margin-top: 20px;
   text-decoration: none;
