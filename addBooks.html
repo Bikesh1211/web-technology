@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Insertion Form</title>
+    <style>
+      /* Basic styling for the form */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      form {
+        width: 400px;
+        border: 1px solid #ccc;
+        padding: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Book Insertion Form</h2>
+    <form action="addBooks.php" method="post">
+      <label for="name">Book Name:</label>
+      <input type="text" name="name" required />
+
+      <label for="author">Author:</label>
+      <input type="text" name="author" required />
+
+      <label for="image">Image URL:</label>
+      <input type="text" name="image" required />
+
+      <label for="price">Price:</label>
+      <input type="number" name="price" required />
+
+      <label for="qty">Quantity:</label>
+      <input type="number" name="qty" required />
+
+      <input type="submit" value="Insert Book" />
+    </form>
+  </body>
+</html>
